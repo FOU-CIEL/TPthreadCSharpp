@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace TPthreadCSharpp
 {
+
+    using CTest;
+
     class Program
     {
         static void AfficheA()
@@ -29,14 +32,31 @@ namespace TPthreadCSharpp
             Thread thread1_fonction = new Thread(AfficheA);
             Thread thread2_fonction = new Thread(AfficheA);
             Thread thread3_fonction = new Thread(AfficheA);
+            CTest.CTest test = new CTest.CTest();
+
+            Thread thread1_fonction1 = new Thread(AfficheA);
+            Thread thread2_fonction1 = new Thread(AfficheA);
+            Thread thread3_fonction1 = new Thread(AfficheA);
+            Thread thread4_fonction2 = new Thread(test.AfficheB);
+            Thread thread5_fonction3 = new Thread(test.AfficheC);
 
             thread1_fonction.Name = "thread1_fonction1";
             thread2_fonction.Name = "thread2_fonction1";
             thread3_fonction.Name = "thread3_fonction1";
+            thread1_fonction1.Name = "thread1_fonction1";
+            thread2_fonction1.Name = "thread2_fonction1";
+            thread3_fonction1.Name = "thread3_fonction1";
+            thread4_fonction2.Name = "thread4_fonction2";
+            thread5_fonction3.Name = "thread5_fonction3";
 
             thread1_fonction.Start();
             thread2_fonction.Start();
             thread3_fonction.Start();
+            //thread1_fonction1.Start();
+            //thread2_fonction1.Start();
+            //thread3_fonction1.Start();
+            thread4_fonction2.Start();
+            thread5_fonction3.Start();
         }
     }
 }
